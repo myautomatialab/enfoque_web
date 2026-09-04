@@ -12,10 +12,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://enfoqueconmiguel.com";
+const title = "Enfoque — Tu productividad, en un solo lugar";
+const description =
+  "Enfoque centraliza tus tareas, finanzas, calendario y conocimiento en un único dashboard personal.";
+
 export const metadata: Metadata = {
-  title: "Enfoque — Tu productividad, en un solo lugar",
-  description:
-    "Enfoque centraliza tus tareas, finanzas, calendario y conocimiento en un único dashboard personal.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "Enfoque",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
